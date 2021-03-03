@@ -1,0 +1,30 @@
+{% extends 'BlogApp/base.html' %}
+
+{% block content %}
+<a href="/admin/FinanzasApp/registro/add/" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+
+   
+<div>
+    <table>
+        <tr><th> Flujo General Anual</th></tr>
+        <tr><td>{% include 'visualapp/grafico.html' %}</td></tr>
+    </table>
+    <style type="text/css">
+    .tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: separate;}
+    .tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:center;}
+    .tftable tr {background-color:#d4e3e5;}
+    .tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:center;}
+    .tftable tr:hover {background-color:#ffffff;}
+    </style>
+    <br>
+    Registro General:
+    <table class="tftable" border="1">
+    <tr><th>Fecha de Registro</th><th>Cantidad</th><th>Inversión</th><th>Total Anual</th><th>Media Anual</th></tr>
+    {% for cuenta in cuentas %}
+    <tr><td>{{ cuenta.Fecha }}</td><td>{{ cuenta.Cantidad }}</td><td>{{ cuenta.Inversión }}</td><td> X </td><td> X </td></tr>
+    {% endfor %}
+    </table>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'BlogApp/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+
+        {% if user.is_authenticated %}
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.Título}}</a></h2>
+            <p>{{ post.Contenido|linebreaksbr }}</p>
+            <div class="date">
+                <p>publicado: {{ post.Publicado }}</p>
+            </div>
+        {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}

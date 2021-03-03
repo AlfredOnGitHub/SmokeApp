@@ -1,0 +1,9 @@
+Añadir a general.html
+
+        <tr><td>{% include 'Visual/grafico.html' %}</td></tr>
+
+bajo 
+
+<tr><th> Flujo General Anual</th></tr>
+
+Una vez esté creada la gráfica/aplicación.
